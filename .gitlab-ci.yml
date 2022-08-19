@@ -1,0 +1,10 @@
+stages:
+  - build
+
+say_hostname:
+  stage: build
+  script: ./scripts/hostname.ps1
+
+say_date:
+  stage: build
+  script: ./scripts/date.ps1
