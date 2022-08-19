@@ -3,8 +3,10 @@ stages:
 
 say_hostname:
   stage: build
+  tags: [powershell]    
   script: ./scripts/hostname.ps1
 
 say_date:
   stage: build
+  tags: [powershell]  
   script: ./scripts/date.ps1
