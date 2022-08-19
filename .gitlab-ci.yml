@@ -22,14 +22,10 @@ say_date:
   when: manual
   script: ./scripts/date.ps1
 
-say_hurray:
-  stage: summary
-  tags: [powershell]  
-  when: on_success
-  script: echo "Yes, the pipeline succeeded!"
 
-say_booo:
-  stage: summary
+say_success:
+  stage: build
   tags: [powershell]  
-  when: on_failure
-  script: echo "Booo, the pipeline failed :("
+  needs: ["say_date","say_hostname"]
+  when: manual
+  script: ./scripts/date.ps1
