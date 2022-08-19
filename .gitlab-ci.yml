@@ -22,12 +22,6 @@ say_date:
   when: manual
   script: ./scripts/date.ps1
 
-say_date:
-  stage: build2
-  tags: [powershell]  
-  when: manual
-  script: ./scripts/date.ps1
-
 say_hurray:
   stage: summary
   tags: [powershell]  
