@@ -27,5 +27,5 @@ say_success:
   stage: build
   tags: [powershell]  
   needs: ["say_date","say_hostname"]
-  when: manual
+  when: on_success
   script: ./scripts/date.ps1
