@@ -4,7 +4,7 @@ variables:
     description: |
       "
       choose from: 
-      simple_dependency
+      simple_dependency<br>
       blable
       "
     
