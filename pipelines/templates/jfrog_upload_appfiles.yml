@@ -25,7 +25,7 @@ upload_files:
   needs: ["start_pipeline"]
   when: manual
   script: 
-    - jf rt u "../appfiles" $ARTIFACTORY_REPO_KEY
+    - jf rt u "appfiles" $ARTIFACTORY_REPO_KEY
 
 
 say_success:
