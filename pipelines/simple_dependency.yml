@@ -20,11 +20,11 @@ say_date:
   stage: build
   tags: [powershell]  
   when: manual
-  script: & ../scripts/date.ps1
+  script: powershell ../scripts/date.ps1
 
 
 say_success:
   stage: build
   tags: [powershell]  
   needs: ["say_date","say_hostname"]
-  script: & ../scripts/date.ps1
+  script: powershell ../scripts/date.ps1
