@@ -16,3 +16,22 @@ say_success:
 ```
 ERROR: Job failed (system failure): prepare environment: failed to start process: exec: "pwsh": executable file not found in %PATH%. Check https://docs.gitlab.com/runner/shells/index.html#shell-profile-loading for more information
 ```
+
+
+# artifactory
+
+filestore - artifactory stores binaries there
+
+projects:
+project1 - prj1
+
+repositories:
+local repository, type generic: prj1-repo1
+
+
+# gitlab - artifactory integration
+
+- to resolve binaries
+- to deploy binaries
+- gitlab produces binaries. artifactory is an interface for this. 
+- artifactory add build information to packages. links package to build
