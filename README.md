@@ -26,7 +26,7 @@ projects:
 project1 - prj1
 
 repositories:
-local repository, type generic: prj1-repo1
+local repository, type generic (upload in any format, no separate package indexes): prj1-repo1
 
 
 # gitlab - artifactory integration
