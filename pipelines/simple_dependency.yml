@@ -9,6 +9,7 @@ variables:
 stages:
   - build
   - summary
+  - .post
 
 say_hostname:
   stage: build
