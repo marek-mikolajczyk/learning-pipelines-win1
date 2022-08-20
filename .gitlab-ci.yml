@@ -4,6 +4,6 @@ variables:
     description: "choose from: simple_dependency.yml"
     
 include:
-  - local: /pipelines/templates/simple_dependency.yml
+  - local: /pipelines/simple_dependency.yml
     rules:
       - if: $PIPELINE_NAME == "simple_dependency"
