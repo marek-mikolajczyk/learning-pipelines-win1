@@ -1,7 +1,12 @@
 variables:
   PIPELINE_NAME:
     value: ""
-    description: "choose from: simple_dependency\blable"
+    description: |
+      "
+      choose from: 
+      simple_dependency
+      blable
+      "
     
 include:
   - local: /pipelines/simple_dependency.yml
