@@ -12,8 +12,10 @@ prepare_jfrog_cli:
     # Install JFrog CLI
     - choco install jfrog-cli jfrog-cli-v2-jf
     # Configure Artifactory instance with JFrog CLI
-    - jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
-    - jfrog rt c show
+    #- jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
+    - jf config add JFROG1 --artifactory-url=$ARTIFACTORY_URL --basic-auth-only=true --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+    #- jfrog rt c show
+    - jf config show
     
 
 
