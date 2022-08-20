@@ -1,21 +1,29 @@
-before_script:
-  # Install JFrog CLI
-  -  curl -fL https://getcli.jfrog.io | sh
-  # Configure Artifactory instance with JFrog CLI
-  - ./jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
-  - ./jfrog rt c show
-    
 stages:
   - .pre
   - build
   - .post
+
+prepare_jfrog_cli:
+  stage: .pre
+  tags: [powershell]    
+  needs: ["start_pipeline"]
+  when: manual
+  script:
+    # Install JFrog CLI
+    -  curl -fL https://getcli.jfrog.io | sh
+    # Configure Artifactory instance with JFrog CLI
+    - ./jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
+    - ./jfrog rt c show
+    
+
 
 upload_files:
   stage: build
   tags: [powershell]    
   needs: ["start_pipeline"]
   when: manual
-  script: jf rt u "../appfiles" $ARTIFACTORY_REPO_KEY
+  script: 
+    - jf rt u "../appfiles" $ARTIFACTORY_REPO_KEY
 
 
 say_success:
