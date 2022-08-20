@@ -13,18 +13,20 @@ stages:
 say_hostname:
   stage: build
   tags: [powershell]    
+  needs: ["start_pipeline"]
   when: manual
   script: . ../scripts/hostname.ps1
 
 say_date:
   stage: build
   tags: [powershell]  
+  needs: ["start_pipeline"]
   when: manual
   script: .  ../scripts/date.ps1
 
 
 say_success:
-  stage: build
+  stage: post
   tags: [powershell]  
   needs: ["say_date","say_hostname"]
   script: . ../scripts/date.ps1
