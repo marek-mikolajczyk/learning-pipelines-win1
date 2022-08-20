@@ -7,3 +7,9 @@ include:
   - local: /pipelines/simple_dependency.yml
     rules:
       - if: $PIPELINE_NAME == "simple_dependency"
+
+job:
+  tags: [powershell]
+  when: manual
+  script:
+    - echo "executing pipeline $PIPELINE_NAME"
