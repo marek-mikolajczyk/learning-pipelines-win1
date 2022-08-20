@@ -11,6 +11,6 @@ include:
 start_pipeline:
   stage: .pre
   tags: [powershell]
-  when: manual
+  #when: manual
   script:
     - echo "executing pipeline $PIPELINE_NAME"
