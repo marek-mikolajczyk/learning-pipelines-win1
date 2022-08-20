@@ -26,8 +26,8 @@ upload_files:
   when: manual
   script: 
     - pwd
-    - ls ..
-    - jf rt u "..\..\appfiles\*" $ARTIFACTORY_REPO_KEY --server-id=$ARTIFACTORY_SERVER_ID
+    - Get-ChildItem .
+    - jf rt u "appfiles\*" $ARTIFACTORY_REPO_KEY --server-id=$ARTIFACTORY_SERVER_ID
 
 
 say_success:
