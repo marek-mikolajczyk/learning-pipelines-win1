@@ -10,9 +10,10 @@ prepare_jfrog_cli:
   when: manual
   script:
     # Install JFrog CLI
+    - choco install jfrog-cli jfrog-cli-v2-jf
     # Configure Artifactory instance with JFrog CLI
-    - jf rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
-    - jf rt c show
+    - jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
+    - jfrog rt c show
     
 
 
