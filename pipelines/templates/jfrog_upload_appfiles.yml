@@ -29,5 +29,5 @@ upload_files:
 say_success:
   stage: .post
   tags: [powershell]  
-  needs: ["say_date","say_hostname"]
+  needs: ["upload_files"]
   script: powershell .\scripts\date.ps1
