@@ -26,3 +26,11 @@ resource "gitlab_project_variable" "artifactory_repo_key" {
   value     = "prj1-repo1"
   protected = false
 }
+
+resource "gitlab_project_variable" "artifactory_server_id" {
+  project   = "2"
+  key       = "ARTIFACTORY_SERVER_ID"
+  value     = "JFROG1"
+  protected = false
+}
+

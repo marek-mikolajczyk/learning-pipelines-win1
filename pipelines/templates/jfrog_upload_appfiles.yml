@@ -25,7 +25,9 @@ upload_files:
   needs: ["start_pipeline"]
   when: manual
   script: 
-    - jf rt u "appfiles" $ARTIFACTORY_REPO_KEY
+    - pwd
+    - ls ..
+    - jf rt u "..\..\appfiles\*" $ARTIFACTORY_REPO_KEY --server-id=$ARTIFACTORY_SERVER_ID
 
 
 say_success:
