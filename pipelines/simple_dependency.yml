@@ -27,7 +27,7 @@ say_date:
 
 
 say_success:
-  stage: post
+  stage: .post
   tags: [powershell]  
   needs: ["say_date","say_hostname"]
   script: . ../scripts/date.ps1
