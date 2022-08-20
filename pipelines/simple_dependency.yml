@@ -1,0 +1,30 @@
+variables:
+  DATE_TODAY:
+    value: "Saturday"
+    description: "my test value"
+  DATE_TOMORROW:
+    value: ""
+    description: "my test value 2"
+    
+stages:
+  - build
+  - summary
+
+say_hostname:
+  stage: build
+  tags: [powershell]    
+  when: manual
+  script: ./scripts/hostname.ps1
+
+say_date:
+  stage: build
+  tags: [powershell]  
+  when: manual
+  script: ./scripts/date.ps1
+
+
+say_success:
+  stage: build
+  tags: [powershell]  
+  needs: ["say_date","say_hostname"]
+  script: ./scripts/date.ps1
