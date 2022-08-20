@@ -5,13 +5,16 @@ variables:
       "
       choose from: 
       simple_dependency
-      blable
+      jfrog_upload_appfiles
       "
     
 include:
-  - local: /pipelines/simple_dependency.yml
+  - local: /pipelines/templates/simple_dependency.yml
     rules:
       - if: $PIPELINE_NAME == "simple_dependency"
+  - local: /pipelines/templates/jfrog_upload_appfiles.yml
+    rules:
+      - if: $PIPELINE_NAME == "jfrog_upload_appfiles"
 
 start_pipeline:
   stage: .pre
