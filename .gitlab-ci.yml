@@ -8,7 +8,8 @@ include:
     rules:
       - if: $PIPELINE_NAME == "simple_dependency"
 
-job:
+start_pipeline:
+  stage: .pre
   tags: [powershell]
   when: manual
   script:
