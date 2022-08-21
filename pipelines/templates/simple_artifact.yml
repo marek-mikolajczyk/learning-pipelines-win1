@@ -10,7 +10,7 @@ create_artifact_gitlab:
   needs: ["start_pipeline"]
   when: manual
   script: 
-    - Compress-Archive -Path .\appfiles -DestinationPath appfiles.zip
+    - Compress-Archive -Path .\appfiles -DestinationPath .\artifacts\appfiles.zip
   artifacts:
     paths:
       - .\artifacts\appfiles.zip
