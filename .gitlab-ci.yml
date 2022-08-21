@@ -6,6 +6,7 @@ variables:
       choose from: 
       simple_dependency
       jfrog_upload_appfiles
+      simple_artifact
       "
     
 include:
