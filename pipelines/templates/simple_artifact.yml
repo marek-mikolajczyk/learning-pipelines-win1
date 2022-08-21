@@ -1,0 +1,24 @@
+stages:
+  - .pre
+  - build
+  - .post
+  
+create_artifact_gitlab:
+  stage: .pre
+  tags: [powershell]
+  needs: ["start_pipeline"]
+  when: manual
+  script: 
+    - Compress-Archive -Path .\appfiles -DestinationPath appfiles.zip
+  artifacts:
+    paths:
+      - .\artifacts\appfiles.zip
+    expire_in: 1 week
+
+create_artifact_artifactory:
+  stage: .pre
+  tags: [powershell]
+  needs: ["start_pipeline"]
+  when: manual
+  script: 
+    - jfrog rt u --build-name="appfiles-$env:CI_JOB_NAME-$env:CI_JOB_ID" --build-number="$env:CI_JOB_ID" .\artifacts\appfiles.zip $env:ARTIFACTORY_REPO_KEY

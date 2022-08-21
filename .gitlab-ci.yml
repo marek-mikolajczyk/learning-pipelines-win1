@@ -15,7 +15,11 @@ include:
   - local: /pipelines/templates/jfrog_upload_appfiles.yml
     rules:
       - if: $PIPELINE_NAME == "jfrog_upload_appfiles"
+  - local: /pipelines/templates/simple_artifact.yml
+    rules:
+      - if: $PIPELINE_NAME == "simple_artifact"
 
+      
 start_pipeline:
   stage: .pre
   tags: [powershell]
