@@ -1,10 +1,11 @@
 stages:
   - .pre
-  - build
+  - build-gitlab
+  - build-artifactory
   - .post
   
 create_artifact_gitlab:
-  stage: build
+  stage: build-gitlab
   tags: [powershell]
   needs: ["start_pipeline"]
   when: manual
@@ -16,7 +17,7 @@ create_artifact_gitlab:
     expire_in: 1 week
 
 create_artifact_artifactory:
-  stage: build
+  stage: build-artifactory
   tags: [powershell]
   needs: ["create_artifact_gitlab"]
   when: manual
