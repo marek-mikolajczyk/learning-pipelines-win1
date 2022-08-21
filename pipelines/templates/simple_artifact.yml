@@ -10,8 +10,9 @@ create_artifact_gitlab:
   needs: ["start_pipeline"]
   when: manual
   script: 
-    - mkdir C:\temp
+    - mkdir C:\temp -Force
     - Compress-Archive -Path .\appfiles -DestinationPath C:\temp\appfiles-"$env:CI_JOB_NAME"-"$env:CI_PIPELINE_ID".zip
+    - cp 
   artifacts:
     paths:
       - C:\temp\appfiles-"$env:CI_JOB_NAME"-"$env:CI_PIPELINE_ID".zip
