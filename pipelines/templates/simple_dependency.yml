@@ -11,6 +11,12 @@ stages:
   - summary
   - .post
 
+job_name:
+  script:
+    - export
+    - 'dir env:'
+
+    
 say_hostname:
   stage: build
   tags: [powershell]    
