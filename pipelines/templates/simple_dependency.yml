@@ -12,6 +12,9 @@ stages:
   - .post
 
 job_name:
+  stage: build
+  tags: [powershell]    
+  when: manual
   script:
     - export
     - 'dir env:'
