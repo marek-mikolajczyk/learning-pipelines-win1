@@ -16,7 +16,6 @@ job_name:
   tags: [powershell]    
   when: manual
   script:
-    - export
     - 'dir env:'
 
     
