@@ -1,0 +1,37 @@
+stages:
+  - .pre
+  - build
+  - .post
+
+prepare_jfrog_cli:
+  stage: .pre
+  tags: [powershell]    
+  needs: ["start_pipeline"]
+  when: manual
+  script:
+    # Install JFrog CLI
+    - choco install jfrog-cli jfrog-cli-v2-jf
+    # Configure Artifactory instance with JFrog CLI
+    #- jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
+    - jf config add JFROG1 --artifactory-url=$ARTIFACTORY_URL --basic-auth-only=true --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+    #- jfrog rt c show
+    - jf config show
+    
+
+
+upload_files:
+  stage: build
+  tags: [powershell]    
+  needs: ["start_pipeline"]
+  when: manual
+  script: 
+    - pwd
+    - Get-ChildItem .
+    - jf rt u "appfiles\*" $ARTIFACTORY_REPO_KEY --server-id=$ARTIFACTORY_SERVER_ID
+
+
+say_success:
+  stage: .post
+  tags: [powershell]  
+  needs: ["upload_files"]
+  script: powershell .\scripts\date.ps1

@@ -1,0 +1,29 @@
+variables:
+  PIPELINE_NAME:
+    value: ""
+    description: |
+      "
+      choose from: 
+      simple_dependency
+      jfrog_upload_appfiles
+      simple_artifact
+      "
+    
+include:
+  - local: /pipelines/templates/simple_dependency.yml
+    rules:
+      - if: $PIPELINE_NAME == "simple_dependency"
+  - local: /pipelines/templates/jfrog_upload_appfiles.yml
+    rules:
+      - if: $PIPELINE_NAME == "jfrog_upload_appfiles"
+  - local: /pipelines/templates/simple_artifact.yml
+    rules:
+      - if: $PIPELINE_NAME == "simple_artifact"
+
+      
+start_pipeline:
+  stage: .pre
+  tags: [powershell]
+  #when: manual
+  script:
+    - echo "executing pipeline $PIPELINE_NAME"

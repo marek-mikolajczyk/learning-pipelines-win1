@@ -1,0 +1,27 @@
+stages:
+  - .pre
+  - build-gitlab
+  - build-artifactory
+  - .post
+  
+create_artifact_gitlab:
+  stage: build-gitlab
+  tags: [powershell]
+  needs: ["start_pipeline"]
+  when: manual
+  script: 
+    - mkdir C:\temp -Force
+    - Compress-Archive -Path .\appfiles -DestinationPath .\artifacts\appfiles-"$env:CI_JOB_NAME"-"$env:CI_PIPELINE_ID".zip
+    - Copy-Item -Path .\artifacts\appfiles-"$env:CI_JOB_NAME"-"$env:CI_PIPELINE_ID".zip -Destination C:\temp\
+  artifacts:
+    paths:
+      - .\artifacts\appfiles-"$env:CI_JOB_NAME"-"$env:CI_PIPELINE_ID".zip
+    expire_in: 1 week
+
+create_artifact_artifactory:
+  stage: build-artifactory
+  tags: [powershell]
+  needs: ["create_artifact_gitlab"]
+  when: manual
+  script: 
+    - jfrog rt u --build-name=appfiles-"$env:CI_JOB_NAME"-"$env:CI_PIPELINE_ID" --build-number="$env:CI_PIPELINE_ID" C:\temp\appfiles-"$env:CI_PIPELINE_NAME"-"$env:CI_PIPELINE_ID".zip $env:ARTIFACTORY_REPO_KEY
