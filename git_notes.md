@@ -67,8 +67,15 @@ add features to solution
 
 https://docs.microsoft.com/en-us/learn/modules/manage-git-branches-workflows/4-explore-git-branch-model-for-continuous-delivery
 
-
+# use git tags
 
 # feature flags
 - toggle features on off
 - app needs do be configured to use it 
+
+
+# protected branches
+- what collaborators can do
+- don't apply to admins and ppl with role 'bypass'
+
+- automatic merging
