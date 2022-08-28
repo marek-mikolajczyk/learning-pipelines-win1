@@ -79,3 +79,23 @@ https://docs.microsoft.com/en-us/learn/modules/manage-git-branches-workflows/4-e
 - don't apply to admins and ppl with role 'bypass'
 
 - automatic merging
+
+
+# !!!
+- do we want to use namespaces for branches:
+```
+bugfix/description
+features/feature-name
+features/feature-area/feature-name
+hotfix/description
+users/username/description
+users/username/workitem
+```
+- do we want to use tag for solution
+
+
+git tag -a v1.0 -m 'git version v1.0'
+git push origin v1.0
+
+
+# merge conflicts
