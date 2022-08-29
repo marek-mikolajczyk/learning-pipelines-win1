@@ -10,6 +10,12 @@ https://support.typora.io/Draw-Diagrams-With-Markdown/
 https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
 
 
+# interesting links
+## branching strategy
+-  https://nvie.com/posts/a-successful-git-branching-model/
+
+
+# main
 
 - how does the git workflow scale with team getting bigger
 - is it easy to undo mistakes
@@ -29,6 +35,10 @@ Feature Branch Workflow:
 - group of developers can work on few features
 - discuss about branch - use pull requests
 - - pull request - tell others that you modified code in a branch. PR can be from branch or commit. PR initializes review page which compares 2 branches. if you don't have write rights to master, fork the repository first. when creating PR, you can specify into which branch changes will be done. PR can be linked  
+- use release branch or tags. release branch can get a commit, while a tag points to precise commit
+- consider branch lifetime
+- use branch of branch, not everything put to develop branch
+
 
 <div class="center">
 
