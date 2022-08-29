@@ -22,6 +22,9 @@ https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
 2 main strategies:
 
 Feature Branch Workflow:
+- also called topic branches. isolate work in progress form completed work
+- good to use naming convention with /
+- feature flags allow to toggle. needs to be coded. allows canary release - allow small subset of users to use new feature. users can be chosed based on sth...
 - all feature development is in dedicated branch and not main one. main branch never contain broken code. 
 - group of developers can work on few features
 - discuss about branch - use pull requests
