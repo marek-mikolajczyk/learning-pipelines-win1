@@ -145,3 +145,10 @@ git log -2  --pretty=oneline --abbrev-commit
 =======
 git log -2  --pretty=oneline --abbrev-commit
 >>>>>>> c1d330749deddee29b679c50a965d475d6b883f1
+
+
+
+# redo stuff
+## unstage file
+git reset HEAD eee
+## return to content of file before last commit
