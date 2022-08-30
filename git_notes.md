@@ -117,9 +117,18 @@ arek@DESKTOP-KI2F6IT:learning-pipelines-win1$ git diff HEAD --compact-summary
 
 ## changes without git add / rm
 git diff --cached --compact-summary
+git diff --staged --compact-summary
 
 # difference since last commit after git add / rm
 git diff HEAD 
 
-# changed to be commited (after git add)
-git diff --staged --compact-summary
+
+
+# git commit
+## skip staging (git add)
+git commit -a
+
+
+
+# git log
+git log -p 
