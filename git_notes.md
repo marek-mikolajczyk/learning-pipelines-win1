@@ -137,14 +137,11 @@ git log -p -2
 
 git log --pretty=oneline -2
 git log --pretty=short -2
-git log -2 --pretty=oneline --name-statu
+git log -2 --pretty=oneline --name-status
 git log -2 --pretty=oneline --stat
 
-<<<<<<< HEAD
+
 git log -2  --pretty=oneline --abbrev-commit
-=======
-git log -2  --pretty=oneline --abbrev-commit
->>>>>>> c1d330749deddee29b679c50a965d475d6b883f1
 
 
 
@@ -152,3 +149,15 @@ git log -2  --pretty=oneline --abbrev-commit
 ## unstage file
 git reset HEAD eee
 ## return to content of file before last commit
+
+
+# git  remotes
+git remote > origin
+shows shortname of remote server 
+git remote -v
+
+we can have multiple remotes, then
+git fetch pb
+
+# show remote branches
+git remote show origin
