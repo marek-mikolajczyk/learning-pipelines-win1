@@ -131,4 +131,13 @@ git commit -a
 
 
 # git log
-git log -p 
+## show last 2 commits
+git log -p -2
+
+
+git log --pretty=oneline -2
+git log --pretty=short -2
+git log -2 --pretty=oneline --name-statu
+git log -2 --pretty=oneline --stat
+
+git log -2  --pretty=oneline --abbrev-commit
