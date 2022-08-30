@@ -72,3 +72,8 @@ https://docs.microsoft.com/en-us/learn/modules/manage-git-branches-workflows/4-e
 # feature flags
 - toggle features on off
 - app needs do be configured to use it 
+
+
+# git commands
+```
+git log --pretty=format:"%h %s" --graph
