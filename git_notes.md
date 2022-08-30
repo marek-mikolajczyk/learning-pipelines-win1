@@ -97,4 +97,29 @@ git checkout HEAD git_notes.md
 
 
 # git diff
-changed but not yet staged
+## changed but not yet staged
+ git diff -p test678
+ ## short outputs
+git diff --compact-summary
+git diff --numstat
+git diff --name-status
+
+
+
+## changes since last commit
+```
+arek@DESKTOP-KI2F6IT:learning-pipelines-win1$ git diff HEAD --compact-summary
+ abc (new)    | 1 +
+ git_notes.md | 5 +++++ 
+ test678      | 2 +-
+ 3 files changed, 7 insertions(+), 1 deletion(-)
+```
+
+## changes without git add / rm
+git diff --cached --compact-summary
+
+# difference since last commit after git add / rm
+git diff HEAD 
+
+# changed to be commited (after git add)
+git diff --staged --compact-summary
