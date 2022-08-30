@@ -77,3 +77,24 @@ https://docs.microsoft.com/en-us/learn/modules/manage-git-branches-workflows/4-e
 # git commands
 ```
 git log --pretty=format:"%h %s" --graph
+
+https://git-scm.com/docs/git-status
+git status -s 
+git status -s test456
+git status -b -s
+git status -v
+
+# restoring files
+
+https://www.git-tower.com/learn/git/faq/restoring-deleted-files
+https://www.atlassian.com/git/tutorials/saving-changes/git-diff
+
+
+# restore deleted file before commit
+git checkout HEAD git_notes.md
+
+# restore deleted file after commit
+
+
+# git diff
+changed but not yet staged
