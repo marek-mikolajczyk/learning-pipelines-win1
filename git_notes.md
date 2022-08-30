@@ -140,6 +140,8 @@ git log --pretty=short -2
 git log -2 --pretty=oneline --name-statu
 git log -2 --pretty=oneline --stat
 
+<<<<<<< HEAD
 git log -2  --pretty=oneline --abbrev-commit
-
-# undo stuff
+=======
+git log -2  --pretty=oneline --abbrev-commit
+>>>>>>> c1d330749deddee29b679c50a965d475d6b883f1
