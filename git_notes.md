@@ -12,6 +12,8 @@ https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
 
 https://www.flagship.io/git-branching-strategies/
 
+https://gitential.com/git-branching-strategies-for-your-team-how-to-choose-the-best/
+
 
 - how does the git workflow scale with team getting bigger
 - is it easy to undo mistakes
