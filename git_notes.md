@@ -15,6 +15,9 @@ https://www.flagship.io/git-branching-strategies/
 https://gitential.com/git-branching-strategies-for-your-team-how-to-choose-the-best/
 
 
+https://git.seveas.net/
+
+
 - how does the git workflow scale with team getting bigger
 - is it easy to undo mistakes
 - added effort to the team
@@ -179,3 +182,7 @@ git remote show origin
 - started from commit to branch (basic)
 - started from merge request (merge request)
 - starts after merging two branches (merge result)
+
+
+# hooks
+https://ahmetcan.org/git-hooks-enforce-commit-message-and-branch-name/
