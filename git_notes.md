@@ -10,6 +10,8 @@ https://support.typora.io/Draw-Diagrams-With-Markdown/
 https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
 
 
+https://www.flagship.io/git-branching-strategies/
+
 
 - how does the git workflow scale with team getting bigger
 - is it easy to undo mistakes
@@ -18,6 +20,14 @@ https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
 - master branch = project history
 - write meaningful commit messages
 - PR - start discussion about commits. work doesn't have to be finished, getting stuck, ready for review.
+- trunk-based - (shared trunk) no branches. often commit to avoid merge conflicts. good for  small-middle teams and experienced
+- avoid long lived branches
+- branch is pointer to commit
+- gitflow vs github flow
+- merges can collide - need sequencing. uses latest merge ref
+
+
+- gitflow - using feature branches and push to master. feature branch created from master
 
 2 main strategies:
 
@@ -161,3 +171,9 @@ git fetch pb
 
 # show remote branches
 git remote show origin
+
+
+# types of pipelines
+- started from commit to branch (basic)
+- started from merge request (merge request)
+- starts after merging two branches (merge result)
